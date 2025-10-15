@@ -1,0 +1,27 @@
+package Leetcode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class code43 {
+    public static void main(String[] args) {
+        String str = "(]";
+        System.out.println(isValid(str));
+    }
+
+    public static boolean isValid(String s) {
+        Deque<Character> stack = new ArrayDeque<>();
+        for (final char c : s.toCharArray())
+            if (c == '(')
+                stack.push(')');
+            else if (c == '{')
+                stack.push('}');
+            else if (c == '[')
+                stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c)
+                return false;
+
+        return stack.isEmpty();
+
+    }
+}
