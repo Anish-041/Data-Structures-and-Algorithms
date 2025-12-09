@@ -17,10 +17,9 @@ public class code62 {
         while (i<=numRows) {
             List<Integer> list = new ArrayList<>();
             int[] arr = new int[i];
-            int index=0;
             if (i==1) {
                 list.add(val);
-                arr[index++] = val;
+                arr[0] = val;
             }
             else {
                 List<Integer> temp = ans.get(i-2);
